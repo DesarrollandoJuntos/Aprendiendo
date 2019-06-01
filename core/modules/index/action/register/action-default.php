@@ -1,22 +1,37 @@
+
+
 <?php
 
-if(isset($_POST["accept"])){
-$c= ClientData::getByEmail($_POST["email"]);
-if($c==null){
-$client =  new ClientData();
-$client->name = $_POST["name"];
-$client->lastname = $_POST["lastname"];
-$client->email = $_POST["email"];
-$client->address = $_POST["address"];
-$client->password = sha1(md5($_POST['password']));
-$client->phone = $_POST["phone"];
-$client->add();
+if(!isset($_SESSION["client_id"])) {
+$user = $_POST['email'];
+$pass = sha1(md5($_POST['password']));
 
-Core::redir("index.php?view=clientaccess");
-}else{
-Core::alert("Ya existe un usuario registrado con esta direccion email.");
-Core::redir("./?view=register");
-
+$base = new Database();
+$con = $base->connect();
+ $sql = "select * from client where (email= \"".$user."\") and password= \"".$pass."\" and is_active=1";
+//print $sql;
+$query = $con->query($sql);
+$found = false;
+$userid = null;
+while($r = $query->fetch_array()){
+	$found = true ;
+	$userid = $r['id'];
 }
+
+if($found==true) {
+//	session_start();
+//	print $userid;
+	$_SESSION['client_id']=$userid ;
+//	setcookie('userid',$userid);
+//	print $_SESSION['userid'];
+	print "Cargando ... $user";
+	Core::redir("index.php?view=index");
+}else {
+	Core::redir("index.php?view=clientaccess");
+}
+
+}else{
+	Core::redir("index.php?view=client");
+	
 }
 ?>

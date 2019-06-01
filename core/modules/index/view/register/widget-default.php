@@ -9,30 +9,8 @@
 				<div class="panel-heading">REGISTRO DE CLIENTES</div>
 				<div class="panel-body">
 <form class="form-horizontal" role="form" method="post" action="index.php?action=register">
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">*Nombre</label>
-    <div class="col-lg-10">
-      <input type="text" required name="name" class="form-control" id="inputEmail1" placeholder="Nombre">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">*Apellido</label>
-    <div class="col-lg-10">
-      <input type="text" required name="lastname" class="form-control" id="inputEmail1" placeholder="Apellido">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Telefono</label>
-    <div class="col-lg-10">
-      <input type="text" name="phone" class="form-control" id="inputEmail1" placeholder="Telefono">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Direccion</label>
-    <div class="col-lg-10">
-      <input type="text" name="address" class="form-control" id="inputEmail1" placeholder="Direccion">
-    </div>
-  </div>
+  
+  
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">*Correo Electronico</label>
