@@ -1,141 +1,183 @@
-<?php 
-$coin_symbol = ConfigurationData::getByPreffix("general_coin")->val;
-$img_default = ConfigurationData::getByPreffix("general_img_default")->val;
-$cnt=0;
-$slides = SlideData::getPublics();
-$featureds = ProductData::getFeatureds();
-?>
-<section>
-  <div class="container">
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
 
-  <div class="row">
-
-  <div class="col-md-12">
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <?php if(count($slides)>0):?>
-
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-<?php foreach($slides as $s):?>
-        <li data-target="#carousel-example-generic" data-slide-to="<?php echo $cnt; ?>" class="<?php if($cnt==0){ echo "active";}?>"></li>
-<?php $cnt++; endforeach; ?>
-
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-<?php $cnt=0; foreach($slides as $s):
-$url = "admin/storage/slides/".$s->image;
-?>
-
-        <div class="item <?php if($cnt==0){ echo "active"; }?>">
-          <img src="<?php echo $url; ?>" alt="...">
-          <div class="carousel-caption">
-            <h2><?php echo $s->title; ?></h2>
-          </div>
-        </div>
-<?php $cnt++; endforeach; ?>
-<!--
-        <div class="item">
-          <img src="http://placehold.it/800x300" alt="...">
-          <div class="carousel-caption">
-            <h2>Heading</h2>
-          </div>
-        </div>
-        -->
+  
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="res/img/1.png" alt="Los Angeles" style="width:100%;">
       </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
+      <div class="item">
+        <img src="res/img/2.png" alt="Chicago" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="res/img/3.png" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="res/img/1.png" alt="New york" style="width:100%;">
+      </div>
     </div>
-    <br>
-  <?php endif; ?>
 
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<?php
-
-$nproducts = count($featureds);
-$filas = $nproducts/3;
-$extra = $nproducts%3;
-if($filas>1&& $extra>0){ $filas++; }
-$n=0;
-?>
-<?php if(count($featureds)>0):?>
-<a href="./"><div style="background:#333;font-size:25px;color:white;padding:5px;">Productos Destacados</div></a>
-<br>
-<?php for($i=0;$i<$filas;$i++):?>
-  <div class="row">
-<?php for($j=0;$j<3;$j++):
-$p=null;
-if($n<$nproducts){
-$p = $featureds[$n];
-}
-?>
-<?php if($p!=null):
-$img = "admin/storage/products/".$p->image;
-if($p->image==""){
-  $img=$img_default;
-}
-?>
-  <div class="col-md-4">
- <center>   <img src="<?php echo $img; ?>"  style="width:120px;height:120px;"></center>
-  <h4 class="text-center"><?php echo $p->name; ?></h4>
-<h3 class="text-center text-primary"> <?php echo $coin_symbol." ".number_format($p->price,2,".",","); ?></h3>
-<?php 
-$in_cart=false;
-if(isset($_SESSION["cart"])){
-  foreach ($_SESSION["cart"] as $pc) {
-    if($pc["product_id"]==$p->id){ $in_cart=true;  }
-  }
-  }
-
-  ?>
-<center>
-
-<?php
- if(!$p->in_existence):?>
-
-<a href="javascript:void()" class="btn btn-labeled btn-sm btn-warning tip" title="No disponible">
-                <span class="btn-label"><i class="glyphicon glyphicon-shopping-cart"></i></span>No Disponible</a>
-<br>
-
-<?php elseif(!$in_cart):?>
-
-<a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat" class="btn btn-labeled btn-sm btn-primary tip" title="A&ntilde;adir al carrito">
-                <span class="btn-label"><i class="glyphicon glyphicon-shopping-cart"></i></span>Comprar</a>
-<br>
-<?php else:?>
-<center><a href="javascript:void()" class="btn btn-labeled btn-sm btn-success tip" title="Ya esta en el carrito">
-                <span class="btn-label"><i class="glyphicon glyphicon-shopping-cart"></i></span>Ya esta agregado</a>
-<br>
-<?php endif; ?>
-<a href="index.php?view=producto&product_id=<?php echo $p->id; ?>">Detalles</a>
-                </center>
-
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-<?php endif; ?>
-<?php $n++; endfor; ?>
-  </div>
-<?php endfor; ?>
-<?php else:?>
-  <div class="jumbotron">
-  <h2>No hay productos destacados.</h2>
-  <p>En la pagina principal solo se muestran productos marcados como destacados.</p>
-  </div>
-<?php endif; ?>
+</div>
+
+<br><br>
 
 
+    <div class="container">
+            <div class="row">
+                <div class="col-md-3"><!--aqui inicia la columna izquierda-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Historial de temas
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <ul style="list-style-type:circle;">
+                                            <li>Programación</li>
+                                            <li>Diseño</li>
+                                            <li>Historia</li>
+                                            <li>Quimica</li>
+                                            <li>Electronica</li>
+                                            <li>Seguridad</li>
+                                            <li>Ciencia sociales</li>
+                                            <li>Programacion2</li>
+                                            <li>Diseño2</li>
+                                            <li>Historia2</li>
+                                            <li>Quimica2</li>
+                                            <li>Electronica2</li>
+                                            <li>Seguridad2</li>
+                                            <li>Ciencia sociales2</li>
+                                            
+                                        </ul>   
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <br>
+                                        <br>
+                                        <br>
+                                    <div class="form-group">
+                                        <input type="search" class="form-control" placeholder="Que Tema Buscas?">                                        
+                                    </div>
+                                    <button class="form-control">Buscar</button>
+                                </div>
+                            </div>
 
-  </div>
+                        </div>
 
-  </div>
+                    </div><!--primera fila termina-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  Ranking 10
+                                </div>
+                                <div class="panel-body">
+
+                                    <ol type="1">
+                                        <li>  <img src="res/img/11.png" width="30" height="30">   Jose luis</li>
+
+                                        <li>  <img src="res/img/22.png" width="30" height="30">   Marco antonio</li>
+
+                                        <li>  <img src="res/img/33.png" width="30" height="30">   Jessica</li>
+
+                                        <li>  <img src="res/img/44.png" width="30" height="30">   Miguel</li>
+                                        <li>  <img src="res/img/5.png" width="30" height="30">   Carlos</li>
+                                        <li>  <img src="res/img/6.png" width="30" height="30">   Samuel</li>
+                                        <li>  <img src="res/img/7.png" width="30" height="30">   cristhiam</li>
+                                        <li>  <img src="res/img/8.png" width="30" height="30">    Pedro</li>
+                                        <li>  <img src="res/img/9.png" width="30" height="30">   Diego</li>
+                                        <li>  <img src="res/img/10.png" width="30" height="30">   Hector</li>
 
 
-  </div>
-  </section>
+                                    </ol> 
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="form-group">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <input type="search" class="form-control" placeholder="ingresa tu nick?">                                        
+                                    </div>
+                                    <button class="form-control">Buscate</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!--termina 2 fila-->
+
+
+                </div><!--termina columna izquierda-->
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>  Ultimas Noticias
+                        </div>
+                        <div class="panel-body">
+                            <div class="pollo">
+                              <img src="res/img/Robotica.jpg">
+                            </div>
+                            <br>
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <label>
+                                  <p>
+                                    Curso de robótica 
+                                    <p style="color:green;">Disponible</p>
+                                  </p>
+                                </label>
+                                <p>Lugar: San Juan de Miraflores IE 6069 Pachacutec</p>
+                                <p>       Av. Los heroes 940</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                  <div class="col-md-3">
+                    <img src="res/img/usuario.png">
+                  </div>
+                  <div class="col-md-9">
+                  <div class="form-group">
+                    <h4>Animales En peligro de Extinsión</h4>
+                    <a href="">Jose Luis</a>
+                    <p>Hola que tal me gustaria aprender sobre los animales en peligro de extinsión</p>
+
+                    <label for="comment">Comentanos:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <br>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Comentar</button>
+                   </div>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+            <a href="login.html"></a>
+        </div>
+
