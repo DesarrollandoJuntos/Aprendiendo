@@ -9,8 +9,7 @@ class ClientData {
     $sql = "insert into ".self::$tablename." (email1,password,created_at) ";
 		$sql .= "value (
 		\"$this->email1\",
-		\"$this->password\",
-		$this->created_at)";
+		\"$this->password\")";
 		Executor::doit($sql);
 	}
 
@@ -66,7 +65,6 @@ class ClientData {
 			$array[$cnt]->id = $r['id'];
 			$array[$cnt]->email1 = $r['email1'];
 			$array[$cnt]->password = $r['password'];
-			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;
 		}
 		return $array;

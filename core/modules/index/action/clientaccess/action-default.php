@@ -2,7 +2,7 @@
 
 
 // print_r($_POST);
-$users = ClientData::getByEmail($_POST["email"]);
+$users = ClientData::getByEmail($_POST["email1"]);
 $found = false;
 // print_r($user);
 
@@ -16,7 +16,7 @@ foreach ($users as $user) {
 if($found){
 	Core::redir("index.php?view=client");
 }else{
-	Core::redir("index.php?view=clientaccess");
+	Core::redir("./?view=index");
 }
 
 ?>

@@ -164,12 +164,12 @@
                   </div>
                   <div class="col-md-9">
                   <div class="form-group">
-                    <h4>Animales En peligro de Extinsión</h4>
+                    <h4>Creación de Robots</h4>
                     <a href="">Jose Luis</a>
-                    <p>Hola que tal me gustaria aprender sobre los animales en peligro de extinsión</p>
+                    <p>Me gustaria que me ayuden que libros, son buenos o videos para la creación de robots</p>
 
                     <label for="comment">Comentanos:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="comentar" name="email">
                     <br>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Comentar</button>
                    </div>
