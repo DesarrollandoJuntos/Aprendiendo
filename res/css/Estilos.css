@@ -1,0 +1,34 @@
+       .pollo {
+    background:"img/matematicas.png";
+ }
+.jumbotron {
+    background-color: darkturquoise;
+    color:white;
+}
+.panel-heading {/* se agrega !important para decir al .css que esta lo tome como prioridad*/
+     background-color: black !important;
+    color: white !important;
+
+}
+.navbar {
+    background-color: black;
+}
+
+/*seudo clases de los enlaces ...para darle mayor efecto visual*/
+.navbar-brand:link , .navbar-brand:visited{
+    color:white !important;
+}
+.navbar-brand:hover , .navbar-brand:active{
+    background-color: white;
+    color:white !important;
+
+}
+
+/*para decorar un parrafo en especial  y no todos*/
+#navbar ul li a:link , #navbar ul li a:visited {
+    color:black !important;
+}
+#navbar ul li a:hover , #navbar ul li a:active {
+    color:white !important;
+
+}
