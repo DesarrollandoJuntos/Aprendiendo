@@ -1,20 +1,16 @@
 <?php
 class ClientData {
-	public static $tablename = "client";
+	public static $tablename = "clientes";
 
 
 
-	public function ClientData(){
-		$this->name = "";
-		$this->lastname = "";
-		$this->email = "";
-		$this->password = "";
-		$this->created_at = "NOW()";
-	}
 
-	public function add(){
-		$sql = "insert into ".self::$tablename." (name,lastname,phone,address,email,password,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->phone\",\"$this->address\",\"$this->email\",\"$this->password\",$this->created_at)";
+	public function add1(){
+    $sql = "insert into ".self::$tablename." (email1,password,created_at) ";
+		$sql .= "value (
+		\"$this->email1\",
+		\"$this->password\",
+		$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -60,17 +56,15 @@ class ClientData {
 		return $found;
 	}
 
-	public static function getByEmail($mail){
-		$sql = "select * from ".self::$tablename." where email=\"$mail\"";
+	public static function getByEmail($mail1){
+		$sql = "select * from ".self::$tablename." where email1=\"$mail1\"";
 		$query = Executor::doit($sql);
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new ClientData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->lastname = $r['lastname'];
-			$array[$cnt]->email = $r['email'];
+			$array[$cnt]->email1 = $r['email1'];
 			$array[$cnt]->password = $r['password'];
 			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;

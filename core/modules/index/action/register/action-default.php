@@ -1,13 +1,13 @@
 <?php
 
 if(isset($_POST["accept"])){
-$c= ClientData::getByEmail($_POST["email"]);
+$c= ClientData::getByEmail($_POST["email1"]);
 if($c==null){
 $client =  new ClientData();
-$client->email = $_POST["email"];
+$client->email1 = $_POST["email1"];
 $client->password = sha1(md5($_POST['password']));
 
-$client->add();
+$client->add1();
 
 Core::redir("index.php?view=clientaccess");
 }else{
