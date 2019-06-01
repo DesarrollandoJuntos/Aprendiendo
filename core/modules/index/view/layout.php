@@ -47,11 +47,11 @@
       </ul>
 
     <?php else:
-     $usuarios = UsuariosData::getById($_SESSION["client_id"]);
+     $usuarios = ClientData::getById($_SESSION["client_id"]);
 ?>
     
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> &nbsp; <?php echo $usuarios->nombre." ".$usuarios->apellido;?><b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> &nbsp; <?php echo $usuarios->email1;?><b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="index.php?view=usuarioaccess">Inicio</a></li>
           <li><a href="logout.php">Salir</a></li>

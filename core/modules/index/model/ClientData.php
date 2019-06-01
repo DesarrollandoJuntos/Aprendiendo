@@ -42,13 +42,8 @@ class ClientData {
 		$data = new ClientData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
-			$data->name = $r['name'];
-			$data->lastname = $r['lastname'];
-			$data->email = $r['email'];
-			$data->address = $r['address'];
-			$data->phone = $r['phone'];
+			$data->email1 = $r['email1'];
 			$data->password = $r['password'];
-			$data->created_at = $r['created_at'];
 			$found = $data;
 			break;
 		}
