@@ -29,10 +29,30 @@
         <li><a href="#">Deseas Enseñar</a></li>
 
       </ul>
+
+      <?php if(!isset($_SESSION["client_id"])):?>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar Sesión</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
       </ul>
+
+    <?php else:
+     $usuarios = UsuariosData::getById($_SESSION["client_id"]);
+?>
+    
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> &nbsp; <?php echo $usuarios->nombre." ".$usuarios->apellido;?><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.php?view=client">Inicio</a></li>
+          <li><a href="logout.php">Salir</a></li>
+        </ul>
+      </li>
+
+<?php endif; ?>
+
+
+
     </div>
   </div>
 </nav>
@@ -49,16 +69,22 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="res/img/1.png" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+        <img src="res/img/2.png" alt="Chicago" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
+        <img src="res/img/3.png" alt="New york" style="width:100%;">
       </div>
+
+      <div class="item">
+        <img src="res/img/4.png" alt="New york" style="width:100%;">
+      </div>
+
+
     </div>
 
     <!-- Left and right controls -->
