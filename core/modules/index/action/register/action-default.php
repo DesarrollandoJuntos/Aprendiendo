@@ -1,5 +1,4 @@
 
-
 <?php
 
 if(!isset($_SESSION["client_id"])) {
@@ -25,13 +24,13 @@ if($found==true) {
 //	setcookie('userid',$userid);
 //	print $_SESSION['userid'];
 	print "Cargando ... $user";
-	Core::redir("index.php?view=index");
+	Core::redir("index.php?view=clientaccess");
 }else {
 	Core::redir("index.php?view=clientaccess");
 }
 
 }else{
-	Core::redir("index.php?view=client");
+	Core::redir("index.php?view=clientaccess");
 	
 }
 ?>
