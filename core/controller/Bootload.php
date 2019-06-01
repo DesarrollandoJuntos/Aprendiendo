@@ -1,15 +1,8 @@
 <?php
 
 
-// 10 de Octubre del 2014
-// Bootload.php
-// @brief esta clase sirve para alistar los boot
-
 class Bootload {
-	/**
-	* @function load
-	* @brief la funcion load carga un boot correspondiente a un modulo
-	**/	
+	
 	public static function load($view){
 		// Module::$module;
 		if(!isset($_GET['view'])){
