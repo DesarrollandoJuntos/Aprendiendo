@@ -33,8 +33,8 @@
       <?php if(!isset($_SESSION["client_id"])):?>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar Sesión</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
+        <li><a href="index.php?view=usuarioaccess"><span class="glyphicon glyphicon-user"></span> Iniciar Sesión</a></li>
+        <li><a href="index.php?view=register"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
       </ul>
 
     <?php else:
