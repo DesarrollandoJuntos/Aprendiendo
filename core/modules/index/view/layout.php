@@ -44,7 +44,7 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> &nbsp; <?php echo $usuarios->nombre." ".$usuarios->apellido;?><b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="index.php?view=client">Inicio</a></li>
+          <li><a href="index.php?view=usuarioaccess">Inicio</a></li>
           <li><a href="logout.php">Salir</a></li>
         </ul>
       </li>
@@ -204,17 +204,17 @@
                 </div>
 <div class="col-md-9">
                     <div class="form-group">
- 					 	<label for="comment">Comentanos:</label>
-  						<textarea class="form-control" rows="5" id="comment"></textarea>
-  						<br>
-  						<button type="button" class="btn btn-primary" data-dismiss="modal">Comentar</button>
-					</div>
+            <label for="comment">Comentanos:</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+              <br>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Comentar</button>
+          </div>
                 </div>
             </div>
 
         </div>
                 
-                	
+                  
                 </div>
 
             </div>

@@ -1,8 +1,8 @@
 <?php
 
+
 class Bootload {
-
-
+	
 	public static function load($view){
 		// Module::$module;
 		if(!isset($_GET['view'])){
@@ -20,7 +20,7 @@ class Bootload {
 		}
 	}
 
-
+	
 	public static function isValid(){
 		$valid=false;
 		if(file_exists($file = "core/modules/".Module::$module."/boot/".$_GET['view']."/boot-default.php")){

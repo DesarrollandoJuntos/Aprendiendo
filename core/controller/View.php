@@ -1,8 +1,10 @@
 <?php
 
 
+
 class View {
-	
+
+
 	public static function load($view){
 		// Module::$module;
 		if(!isset($_GET['view'])){
@@ -21,7 +23,7 @@ class View {
 		}
 	}
 
-	
+
 	public static function isValid(){
 		$valid=false;
 		if(isset($_GET["view"])){

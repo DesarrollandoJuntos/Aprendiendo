@@ -1,10 +1,11 @@
 <?php
 
 
+
 class Action {
-	
+
 	public static function load($action){
-		// Module::$module;
+		
 		
 		if(!isset($_GET['action'])){
 			include "core/modules/".Module::$module."/action/".$action."/action-default.php";
@@ -22,7 +23,7 @@ class Action {
 		}
 	}
 
-
+	
 	public static function isValid(){
 		$valid=false;
 		if(file_exists($file = "core/modules/".Module::$module."/action/".$_GET['action']."/action-default.php")){

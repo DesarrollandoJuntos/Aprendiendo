@@ -1,7 +1,6 @@
 <?php
 
 
-
 class Cookie {
 	function __get($value){
 		if(!$this->exist($value)){

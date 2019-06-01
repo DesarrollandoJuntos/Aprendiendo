@@ -1,6 +1,7 @@
 <?php
 
 
+
 class Get {
 	function __get($value){
 		if(!$this->exist($value)){

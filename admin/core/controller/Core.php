@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Core {
 
 	public static function includeCSS(){

@@ -1,5 +1,6 @@
 <?php
 
+
 class Session {
 	function __get($value){
 		if(!$this->exist($value)){

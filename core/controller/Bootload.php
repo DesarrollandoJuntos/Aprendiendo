@@ -2,9 +2,9 @@
 
 
 class Bootload {
-	
+
 	public static function load($view){
-		// Module::$module;
+		
 		if(!isset($_GET['view'])){
 			include "core/modules/".Module::$module."/boot/".$view."/boot-default.php";
 		}else{
@@ -20,10 +20,7 @@ class Bootload {
 		}
 	}
 
-	/**
-	* @function isValid
-	* @brief valida la existencia de una vista
-	**/	
+	
 	public static function isValid(){
 		$valid=false;
 		if(file_exists($file = "core/modules/".Module::$module."/boot/".$_GET['view']."/boot-default.php")){

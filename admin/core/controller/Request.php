@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Request {
 	function __get($value){
 		if(!$this->exist($value)){

@@ -1,6 +1,7 @@
 <?php
 
 
+
 class Lb {
 
 	public function Lb(){

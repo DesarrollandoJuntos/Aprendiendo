@@ -1,6 +1,7 @@
 <?php
 
-include "core/autoload.php";
+include "admin/core/autoload.php";
+
 
 
 $lb = new Lb();

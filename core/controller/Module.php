@@ -1,6 +1,8 @@
 <?php
 
 
+
+
 class Module {
 	public static $module;
 	public static $view;

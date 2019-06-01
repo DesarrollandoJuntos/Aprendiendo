@@ -1,6 +1,8 @@
 <?php
 
 
+
+
 class Model {
 
 	public static function exists($modelname){

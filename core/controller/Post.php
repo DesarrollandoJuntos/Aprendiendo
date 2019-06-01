@@ -1,6 +1,7 @@
 <?php
 
 
+
 class Post {
 	function __get($value){
 		if(!$this->exist($value)){

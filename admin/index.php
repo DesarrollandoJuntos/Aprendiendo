@@ -2,8 +2,9 @@
 
 include "core/autoload.php";
 
-$lb= new Lb();
-$lb->loadModule("index");
 
+
+$lb = new Lb();
+$lb->loadModule("index");
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 
-class Action {
 
+
+class Action {
 
 	public static function load($action){
 		// Module::$module;

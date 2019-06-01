@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-7">
-    <h3>Registrate para poder comentar y ver nuestra gama de videos talleres!</h3>  
+    <h3>Registrate para poder participar y comprar!</h3>  
     <p>Si gustas participar en preguntas o deseas comprar, es requerimiento obligatorio registrarse utilizando el formulario de la derecha y ofrecer datos fidedignos.</p>
     </div>
 		<div class="col-md-5">
@@ -12,32 +12,32 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">*Nombre</label>
     <div class="col-lg-10">
-      <input type="text" required name="nombre" class="form-control" id="inputEmail1" placeholder="Nombre">
+      <input type="text" required name="name" class="form-control" id="inputEmail1" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">*Apellido</label>
     <div class="col-lg-10">
-      <input type="text" required name="apellido" class="form-control" id="inputEmail1" placeholder="Apellido">
+      <input type="text" required name="lastname" class="form-control" id="inputEmail1" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Telefono</label>
     <div class="col-lg-10">
-      <input type="text" name="celular" class="form-control" id="inputEmail1" placeholder="Telefono">
+      <input type="text" name="phone" class="form-control" id="inputEmail1" placeholder="Telefono">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Direccion</label>
     <div class="col-lg-10">
-      <input type="text" name="direccion" class="form-control" id="inputEmail1" placeholder="Direccion">
+      <input type="text" name="address" class="form-control" id="inputEmail1" placeholder="Direccion">
     </div>
   </div>
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">*Correo Electronico</label>
     <div class="col-lg-10">
-      <input type="email" name="correo" required class="form-control" id="inputEmail1" placeholder="Correo Electronico">
+      <input type="email" name="email" required class="form-control" id="inputEmail1" placeholder="Correo Electronico">
     </div>
   </div>
   <div class="form-group">
