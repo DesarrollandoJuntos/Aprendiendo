@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-7">
-    <h3>Registrate para poder participar y comprar!</h3>  
-    <p>Si gustas participar en preguntas o deseas comprar, es requerimiento obligatorio registrarse utilizando el formulario de la derecha y ofrecer datos fidedignos.</p>
+    <h3>Registrate para poder formar parte de nuestra comunidad!</h3>  
+    <p>Si gustas participar no dudes en comentarnos</p>
     </div>
 		<div class="col-md-5">
 			<div class="panel panel-default">
